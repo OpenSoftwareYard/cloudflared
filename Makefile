@@ -60,6 +60,8 @@ ifneq ($(GOARCH),)
     TARGET_ARCH ?= $(GOARCH)
 else ifeq ($(LOCAL_ARCH),x86_64)
     TARGET_ARCH ?= amd64
+else ifeq ($(LOCAL_ARCH),i86pc)
+    TARGET_ARCH ?= amd64
 else ifeq ($(LOCAL_ARCH),amd64)
     TARGET_ARCH ?= amd64
 else ifeq ($(LOCAL_ARCH),i686)
@@ -89,6 +91,8 @@ else ifeq ($(LOCAL_OS),freebsd)
     TARGET_OS ?= freebsd
 else ifeq ($(LOCAL_OS),openbsd)
     TARGET_OS ?= openbsd
+else ifeq ($(LOCAL_OS),illumos)
+    TARGET_OS ?= illumos
 else
     $(error This system's OS $(LOCAL_OS) isn't supported)
 endif
